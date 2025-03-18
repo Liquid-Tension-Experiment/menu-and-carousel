@@ -3,18 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Restaurant</title>
+    <title>JS</title>
   </head>
   <body>
     <header>
       <div class="container">
         <nav>
-          <div class="btn-nav" id="btn-home">Home</div>
-          <div class="btn-nav" id="btn-menu">Menu</div>
-          <div class="btn-nav" id="btn-contact">Contact</div>
+          <ul class="main-menu">
+            <li><a href="#">Link One</a></li>
+            <li class="drop-down-menu">
+              <a href="#">Link Two</a>
+              <ul class="drop-down-choices">
+                <li><a href="#">Content</a></li>
+                <li><a href="#">Animals</a></li>
+                <li><a href="#">Taxes</a></li>
+              </ul>
+            </li>
+            <li class="drop-down-menu">
+              <a href="#">Link Three</a>
+              <ul class="drop-down-choices">
+                <li><a href="#">AC/DC</a></li>
+                <li><a href="#">Metallica</a></li>
+                <li><a href="#">Iron Maiden</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Link Four</a></li>
+          </ul>
         </nav>
       </div>
     </header>
-    <div id="content"></div>
+    <section class="content filler">
+      <div class="container"></div>
+    </section>
+    <section class="content alternate">
+      <div class="container">
+        <div class="carousel">
+          <img
+            src="./img/chevron-left-circle.svg"
+            alt=""
+            class="carousel-btn carousel-left"
+          />
+          <img
+            src="./img/chevron-right-circle.svg"
+            alt=""
+            class="carousel-btn carousel-right"
+          />
+          <ul class="carousel-bottom-row">
+            <li>
+              <a href="#" class="carousel-selected" id="carousel-choice-1"></a>
+            </li>
+            <li><a href="#" id="carousel-choice-2"></a></li>
+            <li><a href="#" id="carousel-choice-3"></a></li>
+            <li><a href="#" id="carousel-choice-4"></a></li>
+          </ul>
+          <div class="viewbox">
+            <div class="img-collection">
+              <img src="./img/craig-adderly.jpg" alt="road and trees" />
+              <!-- <p>Photo by <span>Craig Adderly</span></p> -->
+              <img src="./img/johannes-plenio.jpg" alt="Mountains and water" />
+              <img src="./img/simon-berger.jpg" alt="mountains and sunset" />
+              <img src="./img/sten-egil-liland.jpg" alt="northern lights" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content filler">
+      <div class="container"></div>
+    </section>
   </body>
 </html>

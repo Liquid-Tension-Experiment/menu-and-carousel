@@ -4,3 +4,5 @@
 // image.src = exampleImage
 // import { displayHomePage } from "./home.js";
 import "../styles.css";
+import "./dropdown-menu.js";
+import "./carousel.js";
