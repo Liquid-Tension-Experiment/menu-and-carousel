@@ -17,6 +17,7 @@ li > a {
   color: lightgray;
   padding: 0.6rem 1.3rem;
 }
+
 li > a:hover {
   color: white;
   background-color: #444;
@@ -135,7 +136,13 @@ section {
   z-index: 2;
   padding: 5px 0;
 }
-.carousel-bottom-row li a {
+button {
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+}
+.carousel-bottom-row li button {
   height: 25px;
   width: 25px;
   padding: 0;
@@ -144,14 +151,14 @@ section {
   background-color: #ccc;
   box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.8);
 }
-.carousel-bottom-row li a.carousel-selected {
+.carousel-bottom-row li button.carousel-selected {
   background-color: rgba(5, 20, 37, 1);
   box-shadow: 0 0 15px 0 rgba(213, 227, 240, 1);
 }
-.carousel-bottom-row li a.carousel-selected:hover {
+.carousel-bottom-row li button.carousel-selected:hover {
   background-color: rgba(15, 35, 79, 1);
 }
-.carousel-bottom-row li a:hover {
+.carousel-bottom-row li button:hover {
   background-color: #a4c7eb;
   box-shadow: 0 0 20px 0 rgba(164, 199, 235, 1);
 }

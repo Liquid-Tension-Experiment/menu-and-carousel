@@ -14,7 +14,7 @@ class Carousel {
       .split(" ");
     this.xIncrement = parseInt(columnSizes[0], 10); // Default to 1400px if not found
     this.imageButtons = carouselElement.querySelectorAll(
-      ".carousel-bottom-row a",
+      ".carousel-bottom-row button",
     );
     this.imageButtons.forEach((button) => {
       button.addEventListener("click", this.imageButtonClicked);
