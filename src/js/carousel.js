@@ -6,6 +6,8 @@ class Carousel {
     this.imageCount = this.imagesDiv.children.length;
     this.index = 0;
     this.xOrigin = parseInt(getComputedStyle(this.imagesDiv).left);
+    this.autoScrollTimer = null;
+
     const computedStyle = getComputedStyle(this.imagesDiv);
     const columnSizes = computedStyle
       .getPropertyValue("grid-template-columns")
@@ -14,17 +16,27 @@ class Carousel {
     this.imageButtons = carouselElement.querySelectorAll(
       ".carousel-bottom-row a",
     );
-
-    this.rightButton.addEventListener("click", this.scrollRight);
-    this.leftButton.addEventListener("click", this.scrollLeft);
-
     this.imageButtons.forEach((button) => {
       button.addEventListener("click", this.imageButtonClicked);
     });
+
+    this.autoScroll();
+    this.rightButton.addEventListener("click", this.scrollRight);
+    this.leftButton.addEventListener("click", this.scrollLeft);
   }
+
+  autoScroll = (interval = 5000) => {
+    clearTimeout(this.autoScrollTimer);
+
+    this.autoScrollTimer = setTimeout(() => {
+      this.scrollRight();
+      this.autoScroll(interval);
+    }, interval);
+  };
   updateDisplay = () => {
     this.translateImage();
     this.updateBottomRow();
+    this.autoScroll();
   };
   translateImage = () => {
     let xTranslation = this.xOrigin - this.index * this.xIncrement;
