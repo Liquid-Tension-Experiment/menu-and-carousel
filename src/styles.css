@@ -102,6 +102,26 @@ section {
   height: auto;
   z-index: 0;
 }
+.image-credits {
+  position: absolute;
+  font-size: 1rem;
+  color: lightgray;
+  z-index: 5;
+  font-weight: 200;
+  bottom: 1rem;
+  left: 75%;
+}
+.image-credits a {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: inherit;
+  font-weight: 400;
+  padding: 0 1px;
+}
+.image-credits a:hover {
+  /* background-color: black; */
+  border-bottom: 1px solid white;
+  border-radius: 5px;
+}
 .carousel-btn {
   position: absolute;
   top: 40%;

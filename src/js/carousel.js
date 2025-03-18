@@ -20,9 +20,9 @@ class Carousel {
       button.addEventListener("click", this.imageButtonClicked);
     });
 
-    this.autoScroll();
     this.rightButton.addEventListener("click", this.scrollRight);
     this.leftButton.addEventListener("click", this.scrollLeft);
+    this.updateDisplay();
   }
 
   autoScroll = (interval = 5000) => {
@@ -34,9 +34,48 @@ class Carousel {
     }, interval);
   };
   updateDisplay = () => {
+    this.updateCredits();
     this.translateImage();
     this.updateBottomRow();
     this.autoScroll();
+  };
+  updateCredits = () => {
+    const credits = [
+      {
+        name: "Chris Adderly",
+        creatorURL: "https://www.pexels.com/@thatguycraig000/",
+        imageURL:
+          "https://www.pexels.com/photo/concrete-road-between-trees-1563356/",
+      },
+      {
+        name: "Johannes Plenio",
+        creatorURL: "https://www.pexels.com/@jplenio/",
+        imageURL:
+          "https://www.pexels.com/photo/brown-mountain-near-body-of-water-3131634/",
+      },
+      {
+        name: "Simon Berger",
+        creatorURL: "https://www.pexels.com/@simon73/",
+        imageURL:
+          "https://www.pexels.com/photo/silhouette-of-mountains-1323550/",
+      },
+      {
+        name: "Stein Egil Liland",
+        creatorURL: "https://www.pexels.com/@therato/",
+        imageURL: "https://www.pexels.com/photo/aurora-borealis-1933239/",
+      },
+    ];
+
+    console.log(credits);
+    const currentCredit = credits[this.index];
+    const photoLinkElement = document.querySelector(".image-url");
+    console.log(photoLinkElement);
+    const creatorLinkElement = document.querySelector(".creator-url");
+    console.log(creatorLinkElement);
+
+    photoLinkElement.href = currentCredit.imageURL;
+    creatorLinkElement.href = currentCredit.creatorURL;
+    creatorLinkElement.textContent = currentCredit.name;
   };
   translateImage = () => {
     let xTranslation = this.xOrigin - this.index * this.xIncrement;
